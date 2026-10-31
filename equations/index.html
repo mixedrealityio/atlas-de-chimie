@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feuille d’équations · Atlas de chimie</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../atlas.css">
+<!-- Généré par make-equations.py (VPS) : modifier les données dans ce script puis le relancer. -->
+<style>
+  html { scroll-padding-top: 76px; }
+  body { min-height: 100vh; padding: 0 16px 80px; }
+  header { max-width: 1120px; margin: 0 auto; padding: 22px 12px; display: flex; justify-content: space-between; gap: 12px; font: 500 12px var(--mono); letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+  header a { font: 500 19px var(--serif); letter-spacing: 0; text-transform: none; color: var(--strong); text-decoration: none; }
+  header span { padding-top: 5px; margin-left: auto; text-align: right; }
+  .hero { text-align: center; margin: 48px auto 36px; max-width: 760px; }
+  .hero h1 { font: 400 clamp(42px, 7vw, 76px)/1 var(--serif); color: var(--strong); letter-spacing: -.015em; }
+  .hero p { font: italic 400 clamp(19px, 2.2vw, 24px)/1.4 var(--serif); color: var(--muted); margin-top: 14px; }
+  nav { position: sticky; top: 0; z-index: 2; margin: 0 -16px; padding: 10px 16px; background: color-mix(in srgb, var(--page) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--faint); }
+  nav .in { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; gap: 6px 20px; flex-wrap: wrap; }
+  nav a { font: 500 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; padding: 8px 0; }
+  nav a:hover { color: var(--strong); }
+  nav input { margin-left: auto; width: min(100%, 260px); font: 14px var(--sans); color: var(--strong); background: var(--card); border: 1px solid var(--faint); border-radius: 999px; padding: 8px 14px; }
+  nav input:focus { outline: none; border-color: var(--mid); }
+  main { max-width: 1120px; margin: 0 auto; }
+  .group { background: var(--card); border-radius: 14px; box-shadow: var(--lift); padding: 18px 22px 8px; margin-top: 22px; }
+  .group h2 { font: 400 clamp(26px, 3.4vw, 34px)/1.1 var(--serif); color: var(--strong); padding-bottom: 8px; }
+  ul { list-style: none; padding: 0; }
+  li { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: 4px 24px; align-items: baseline; padding: 11px 0; border-top: 1px solid var(--faint); }
+  .n { font-size: 14px; color: var(--text); } .n small { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .e { font: 400 20px/1.4 var(--serif); color: var(--strong); overflow-x: auto; overflow-y: hidden; padding-left: 14px; border-left: 1px solid var(--mid); }
+  .e sub, .e sup, .n sub, .n sup, small sub, small sup { font-size: .68em; line-height: 0; }
+  small i, .n i { font-family: var(--serif); font-size: 1.1em; color: var(--hi); }
+  .vec { position: relative; display: inline-block; }
+  .vec::before { content: '→'; position: absolute; left: 50%; transform: translateX(-50%); top: -.42em; font-size: .7em; font-style: normal; line-height: 1; }
+  li[hidden], .group[hidden] { display: none; }
+  .empty { text-align: center; color: var(--muted); padding: 40px 0; }
+  @media (max-width: 700px) { li { grid-template-columns: 1fr; } header span { display: none; } }
+</style>
+</head>
+<body>
+<header><a href="../">Atlas de chimie</a></header>
+<section class="hero"><h1>Feuille d’équations</h1><p>Collège · lycée · MPSI-PCSI. Les formules du programme, sans démonstration.</p></section>
+<nav><div class="in"><a href="#g0">Quantité de matière</a><a href="#g1">Solutions</a><a href="#g2">Gaz parfaits</a><a href="#g3">Réaction chimique</a><a href="#g4">Acides et bases</a><a href="#g5">Énergie des réactions</a><a href="#g6">Cinétique</a><a href="#g7">Équilibre chimique</a><a href="#g8">Oxydoréduction, piles</a><a href="#g9">Atome et spectroscopie</a><input type="search" id="q" placeholder="Rechercher une formule" aria-label="Rechercher une formule"></div></nav>
+<main>
+<section class="group" id="g0"><h2>Quantité de matière</h2><ul><li><div class="n">Masse<small><i>n</i> en mol, <i>m</i> en g, <i>M</i> masse molaire en g·mol<sup>−1</sup></small></div><div class="e"><i>n</i> = <i>m</i> / <i>M</i></div></li><li><div class="n">Nombre d’entités<small><i>N</i><sub>A</sub> = 6,022 × 10<sup>23</sup> mol<sup>−1</sup></small></div><div class="e"><i>n</i> = <i>N</i> / <i>N</i><sub>A</sub></div></li><li><div class="n">Gaz<small><i>V</i><sub>m</sub> ≈ 24 L·mol<sup>−1</sup> à 20 °C et 1 atm</small></div><div class="e"><i>n</i> = <i>V</i> / <i>V</i><sub>m</sub></div></li><li><div class="n">Masse volumique, densité<small>ρ<sub>eau</sub> = 1,00 g·mL<sup>−1</sup></small></div><div class="e">ρ = <i>m</i>/<i>V</i> ;  <i>d</i> = ρ / ρ<sub>eau</sub></div></li></ul></section>
+<section class="group" id="g1"><h2>Solutions</h2><ul><li><div class="n">Concentration molaire<small>en mol·L<sup>−1</sup></small></div><div class="e"><i>C</i> = <i>n</i> / <i>V</i></div></li><li><div class="n">Concentration massique<small>en g·L<sup>−1</sup></small></div><div class="e"><i>C</i><sub>m</sub> = <i>m</i> / <i>V</i> = <i>C</i><i>M</i></div></li><li><div class="n">Dilution<small>la quantité de soluté se conserve ; facteur de dilution <i>F</i> = <i>C</i><sub>i</sub>/<i>C</i><sub>f</sub></small></div><div class="e"><i>C</i><sub>i</sub><i>V</i><sub>i</sub> = <i>C</i><sub>f</sub><i>V</i><sub>f</sub></div></li><li><div class="n">Fraction massique</div><div class="e"><i>w</i> = <i>m</i><sub>soluté</sub> / <i>m</i><sub>solution</sub></div></li></ul></section>
+<section class="group" id="g2"><h2>Gaz parfaits</h2><ul><li><div class="n">Équation d’état<small><i>R</i> = 8,314 J·K<sup>−1</sup>·mol<sup>−1</sup> ; <i>P</i> en Pa, <i>V</i> en m<sup>3</sup>, <i>T</i> en K</small></div><div class="e"><i>PV</i> = <i>nRT</i></div></li><li><div class="n">Température</div><div class="e"><i>T</i> (K) = θ (°C) + 273,15</div></li><li><div class="n">Pression partielle (Dalton)<small><i>x</i><sub>i</sub> : fraction molaire</small></div><div class="e"><i>P</i> = Σ <i>P</i><sub>i</sub> ;  <i>P</i><sub>i</sub> = <i>x</i><sub>i</sub><i>P</i></div></li></ul></section>
+<section class="group" id="g3"><h2>Réaction chimique</h2><ul><li><div class="n">Tableau d’avancement<small>ν<sub>i</sub> &lt; 0 pour un réactif, &gt; 0 pour un produit</small></div><div class="e"><i>n</i><sub>i</sub> = <i>n</i><sub>i,0</sub> + ν<sub>i</sub><i>x</i></div></li><li><div class="n">Réactif limitant</div><div class="e"><i>x</i><sub>max</sub> = min(<i>n</i><sub>i,0</sub> / |ν<sub>i</sub>|)</div></li><li><div class="n">Rendement<small>ou <i>m</i><sub>exp</sub> / <i>m</i><sub>max</sub></small></div><div class="e">η = <i>n</i><sub>exp</sub> / <i>n</i><sub>max</sub></div></li></ul></section>
+<section class="group" id="g4"><h2>Acides et bases</h2><ul><li><div class="n">pH<small>concentration en mol·L<sup>−1</sup></small></div><div class="e">pH = −log [H<sub>3</sub>O<sup>+</sup>] ;  [H<sub>3</sub>O<sup>+</sup>] = 10<sup>−pH</sup></div></li><li><div class="n">Produit ionique de l’eau<small>à 25 °C ; pH + pOH = 14</small></div><div class="e"><i>K</i><sub>e</sub> = [H<sub>3</sub>O<sup>+</sup>][HO<sup>−</sup>] = 10<sup>−14</sup></div></li><li><div class="n">Constante d’acidité</div><div class="e"><i>K</i><sub>a</sub> = [H<sub>3</sub>O<sup>+</sup>][A<sup>−</sup>] / [HA] ;  p<i>K</i><sub>a</sub> = −log <i>K</i><sub>a</sub></div></li><li><div class="n">Relation de Henderson<small>pH = p<i>K</i><sub>a</sub> quand [A<sup>−</sup>] = [HA]</small></div><div class="e">pH = p<i>K</i><sub>a</sub> + log([A<sup>−</sup>]/[HA])</div></li><li><div class="n">Acide fort, base forte<small>solutions diluées</small></div><div class="e">pH = −log <i>C</i> ;  pH = 14 + log <i>C</i></div></li><li><div class="n">Acide faible<small>si l’acide est peu dissocié</small></div><div class="e">pH = ½(p<i>K</i><sub>a</sub> − log <i>C</i>)</div></li><li><div class="n">Dosage<small>à l’équivalence, pour une stœchiométrie 1 : 1</small></div><div class="e"><i>C</i><sub>A</sub><i>V</i><sub>A</sub> = <i>C</i><sub>B</sub><i>V</i><sub>B</sub></div></li></ul></section>
+<section class="group" id="g5"><h2>Énergie des réactions</h2><ul><li><div class="n">Quantité de chaleur<small><i>c</i> capacité thermique massique ; eau : 4,18 J·g<sup>−1</sup>·K<sup>−1</sup></small></div><div class="e"><i>Q</i> = <i>mc</i>Δ<i>T</i></div></li><li><div class="n">Loi de Hess</div><div class="e">Δ<sub>r</sub><i>H</i>° = Σ ν Δ<sub>f</sub><i>H</i>°(produits) − Σ ν Δ<sub>f</sub><i>H</i>°(réactifs)</div></li><li><div class="n">Enthalpie libre<small>réaction spontanée si Δ<i>G</i> &lt; 0</small></div><div class="e">Δ<i>G</i> = Δ<i>H</i> − <i>T</i>Δ<i>S</i></div></li><li><div class="n">Constante d’équilibre</div><div class="e">Δ<i>G</i>° = −<i>RT</i> ln <i>K</i></div></li><li><div class="n">Quotient de réaction</div><div class="e">Δ<i>G</i> = Δ<i>G</i>° + <i>RT</i> ln <i>Q</i></div></li></ul></section>
+<section class="group" id="g6"><h2>Cinétique</h2><ul><li><div class="n">Vitesse de réaction<small>ν : nombre stœchiométrique en valeur absolue</small></div><div class="e"><i>v</i> = (1/ν) d[X]/d<i>t</i></div></li><li><div class="n">Ordre 0</div><div class="e">[A] = [A]<sub>0</sub> − <i>kt</i> ;  <i>t</i><sub>1/2</sub> = [A]<sub>0</sub> / 2<i>k</i></div></li><li><div class="n">Ordre 1<small>ln[A] est une droite en fonction de <i>t</i></small></div><div class="e">[A] = [A]<sub>0</sub>e<sup>−kt</sup> ;  <i>t</i><sub>1/2</sub> = ln 2 / <i>k</i></div></li><li><div class="n">Ordre 2</div><div class="e">1/[A] = 1/[A]<sub>0</sub> + <i>kt</i></div></li><li><div class="n">Loi d’Arrhenius<small>ln <i>k</i> = ln <i>A</i> − <i>E</i><sub>a</sub>/<i>RT</i></small></div><div class="e"><i>k</i> = <i>A</i>e<sup>−E<sub>a</sub>/<i>RT</i></sup></div></li></ul></section>
+<section class="group" id="g7"><h2>Équilibre chimique</h2><ul><li><div class="n">Constante d’équilibre<small>pour <i>a</i>A + <i>b</i>B ⇌ <i>c</i>C + <i>d</i>D, concentrations à l’équilibre</small></div><div class="e"><i>K</i> = [C]<sup>c</sup>[D]<sup>d</sup> / ([A]<sup>a</sup>[B]<sup>b</sup>)</div></li><li><div class="n">Sens d’évolution</div><div class="e"><i>Q</i> &lt; <i>K</i> : sens direct ;  <i>Q</i> &gt; <i>K</i> : sens inverse</div></li><li><div class="n">Van ’t Hoff<small>exothermique : <i>K</i> diminue quand <i>T</i> augmente</small></div><div class="e">d ln <i>K</i> / d<i>T</i> = Δ<i>H</i>° / (<i>R</i><i>T</i><sup>2</sup>)</div></li><li><div class="n">Produit de solubilité<small>exemple : AgCl, <i>s</i> = √<i>K</i><sub>s</sub></small></div><div class="e"><i>K</i><sub>s</sub> = [Ag<sup>+</sup>][Cl<sup>−</sup>]</div></li></ul></section>
+<section class="group" id="g8"><h2>Oxydoréduction, piles</h2><ul><li><div class="n">Formule de Nernst<small>à 25 °C ; général : <i>E</i>° + (<i>RT</i>/<i>nF</i>) ln([Ox]/[Red])</small></div><div class="e"><i>E</i> = <i>E</i>° + (0,059 / <i>n</i>) log([Ox]/[Red])</div></li><li><div class="n">Force électromotrice<small>la cathode est le pôle +</small></div><div class="e"><i>E</i> = <i>E</i><sub>cathode</sub> − <i>E</i><sub>anode</sub></div></li><li><div class="n">Enthalpie libre et potentiel<small><i>F</i> = 96 485 C·mol<sup>−1</sup></small></div><div class="e">Δ<i>G</i>° = −<i>nF</i><i>E</i>°</div></li><li><div class="n">Électrolyse (Faraday)<small><i>n</i> : électrons échangés</small></div><div class="e"><i>m</i> = <i>M</i><i>I</i><i>t</i> / (<i>nF</i>)</div></li><li><div class="n">Quantité d’électricité</div><div class="e"><i>Q</i> = <i>I</i><i>t</i> = <i>n</i><sub>e</sub><i>F</i></div></li></ul></section>
+<section class="group" id="g9"><h2>Atome et spectroscopie</h2><ul><li><div class="n">Nombres quantiques<small>une couche <i>n</i> contient au plus 2<i>n</i><sup>2</sup> électrons</small></div><div class="e"><i>n</i> ≥ 1 ;  0 ≤ ℓ ≤ <i>n</i>−1 ;  −ℓ ≤ <i>m</i><sub>ℓ</sub> ≤ ℓ ;  <i>m</i><sub>s</sub> = ±½</div></li><li><div class="n">Niveaux de l’hydrogène<small>1 eV = 1,602 × 10<sup>−19</sup> J</small></div><div class="e"><i>E</i><sub>n</sub> = −13,6 eV / <i>n</i><sup>2</sup></div></li><li><div class="n">Photon<small><i>h</i> = 6,626 × 10<sup>−34</sup> J·s ; <i>c</i> = 2,998 × 10<sup>8</sup> m·s<sup>−1</sup></small></div><div class="e"><i>E</i> = <i>hν</i> = <i>hc</i>/λ</div></li><li><div class="n">Loi de Beer–Lambert<small><i>A</i> = log(<i>I</i><sub>0</sub>/<i>I</i>) ; ℓ : épaisseur de la cuve</small></div><div class="e"><i>A</i> = ε ℓ <i>C</i></div></li></ul></section>
+<p class="empty" id="none" hidden>Aucune formule ne correspond.</p>
+</main>
+<script>
+(function () {
+  var q = document.getElementById('q'), none = document.getElementById('none');
+  q.addEventListener('input', function () {
+    var t = q.value.trim().toLowerCase(), any = false;
+    document.querySelectorAll('.group').forEach(function (g) {
+      var shown = 0;
+      g.querySelectorAll('li').forEach(function (li) { var ok = !t || li.textContent.toLowerCase().indexOf(t) >= 0; li.hidden = !ok; if (ok) shown++; });
+      g.hidden = !shown; if (shown) any = true;
+    });
+    none.hidden = any;
+  });
+})();
+</script>
+</body>
+</html>
