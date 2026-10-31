@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas de chimie</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="atlas.css">
+<script src="engine/cover.js" data-contents></script>
+<!-- every chapter draws with three.js: fetch it now, so a chapter opens without waiting on it -->
+<link rel="prefetch" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" crossorigin>
+<link rel="prefetch" href="https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.core.js" crossorigin>
+<style>
+  body { min-height: 100vh; padding: 0 16px 80px; }
+  header { max-width: 1180px; margin: 0 auto; padding: 22px 12px; display: flex; justify-content: space-between; font: 500 12px var(--mono); letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+  header b { font: 500 19px var(--serif); letter-spacing: 0; text-transform: none; color: var(--strong); }
+  .hero { text-align: center; margin: 72px auto 64px; max-width: 760px; }
+  .hero h1 { font: 400 clamp(46px, 7vw, 84px)/1 var(--serif); color: var(--strong); letter-spacing: -.015em; }
+  .hero p { font: italic 400 clamp(19px, 2.2vw, 24px)/1.4 var(--serif); color: var(--muted); margin-top: 16px; }
+  .shelf { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 22px; }
+  .section { max-width: 1180px; margin: 56px auto 18px; padding: 0 4px; font: 500 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .card { position: relative; background: var(--card); border-radius: 14px; box-shadow: var(--lift); padding: 18px 20px 20px; text-decoration: none; display: flex; flex-direction: column; min-height: 360px; transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s; }
+  @media (hover: hover) { a.card:hover { transform: translateY(-4px) rotate(-.4deg); } }
+  a.card:focus-visible { transform: translateY(-4px) rotate(-.4deg); }
+  .card .no { display: flex; justify-content: space-between; font: 11px var(--mono); color: var(--muted); letter-spacing: .04em; }
+  .card h2 { font: 400 30px/1.05 var(--serif); color: var(--strong); margin-top: 18px; }
+  .card h2 + i { font: italic 400 20px/1.2 var(--serif); color: var(--muted); }
+  .card img { margin-top: auto; width: 100%; aspect-ratio: 9 / 8; object-fit: cover; border-radius: 6px; }
+  .card.soon { box-shadow: none; background: transparent; border: 1px dashed var(--faint); }
+  .card.soon h2 { color: var(--lo); } .card.soon h2 + i { color: var(--faint); }
+  .card .wait { margin-top: auto; font: 11px var(--mono); color: var(--lo); letter-spacing: .06em; text-transform: uppercase; }
+  header span { display: flex; align-items: center; gap: 18px; }
+  .gh { display: flex; color: var(--muted); }
+  .gh:hover { color: var(--strong); }
+  /* phones: each book a row, its picture beside its title, so the shelf can be taken in */
+  @media (max-width: 600px) {
+    body { padding: 0 12px 56px; }
+    header { padding: 18px 4px; }
+    .hero { margin: 36px auto 32px; }
+    .section { margin: 36px auto 12px; }
+    .shelf { gap: 10px; }
+    .card { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 104px; grid-template-rows: auto auto 1fr; column-gap: 14px; padding: 14px 14px 14px 16px; }
+    .card h2 { font-size: 25px; margin-top: 10px; }
+    .card h2 + i { font-size: 17px; }
+    .card img { grid-column: 2; grid-row: 1 / 4; margin: 0; width: 104px; align-self: center; }
+  }
+  .credit { max-width: 1180px; margin: 56px auto 0; font: 12px var(--mono); color: var(--muted); text-align: center; }
+  .credit a { color: var(--hi); }
+  .card .cnt { margin-top: 8px; font: 11px var(--mono); color: var(--red); letter-spacing: .02em; }
+  .legend { max-width: 760px; margin: -36px auto 0; text-align: center; font: 12px/1.6 var(--mono); color: var(--muted); }
+  @media (max-width: 600px) { .card { grid-template-rows: auto auto auto 1fr; } .card .cnt { grid-column: 1; } .card img { grid-row: 1 / 5; } .legend { margin-top: -16px; } }
+</style>
+</head>
+<body>
+  <header><b>Atlas de chimie</b><span><a class="gh" href="../">physique</a><a class="gh" href="../complements/">compléments</a><a class="gh" href="../maths/">maths</a></span></header>
+  <section class="hero">
+    <h1>La chimie, molécule par molécule.</h1>
+    <p>Chaque chapitre, une figure en 3D qu’on fait tourner, qu’on arrête et qu’on décompose</p>
+  </section>
+  <p class="legend">Sur chaque carte, l’année où la notion est enseignée en Chine : 初三 = 3e, 高一 = seconde, 高二 = première ou terminale, 大学 = université.</p>
+  <h2 class="section">Collège</h2>
+  <section class="shelf">
+    <a class="card" href="atome/">
+      <div class="no"><span>N° 01</span><span>4 pages</span></div>
+      <h2>L’atome</h2><i>noyau, couches, ions, isotopes</i>
+      <span class="cnt">Chine : 初三 · 原子的结构</span>
+      <img src="img/atome.jpg" alt="Un atome de sodium avec son noyau et ses couches">
+    </a>
+    <a class="card" href="reaction/">
+      <div class="no"><span>N° 02</span><span>4 pages</span></div>
+      <h2>La réaction chimique</h2><i>conservation, mole, réactif limitant</i>
+      <span class="cnt">Chine : 初三 · 化学方程式</span>
+      <img src="img/reaction.jpg" alt="Le méthane et le dioxygène avant la combustion">
+    </a>
+    <a class="card" href="acides/">
+      <div class="no"><span>N° 03</span><span>3 pages</span></div>
+      <h2>Acides et bases</h2><i>pH, dilution, dosage</i>
+      <span class="cnt">Chine : 初三 · 酸和碱 / 高二</span>
+      <img src="img/acides.jpg" alt="Une échelle de béchers colorés de pH 0 à 14">
+    </a>
+  </section>
+  <h2 class="section">Lycée</h2>
+  <section class="shelf">
+    <a class="card" href="periodique/">
+      <div class="no"><span>N° 04</span><span>4 pages</span></div>
+      <h2>Le tableau périodique</h2><i>rayon, électronégativité, ionisation</i>
+      <span class="cnt">Chine : 高一 · 元素周期律</span>
+      <img src="img/periodique.jpg" alt="Les 36 premiers éléments en tableau">
+    </a>
+    <a class="card" href="molecules/">
+      <div class="no"><span>N° 05</span><span>4 pages</span></div>
+      <h2>La forme des molécules</h2><i>liaison covalente, VSEPR, polarité</i>
+      <span class="cnt">Chine : 高一 · 高二 · 分子结构</span>
+      <img src="img/molecules.jpg" alt="La molécule d’eau et ses doublets non liants">
+    </a>
+    <a class="card" href="cristaux/">
+      <div class="no"><span>N° 06</span><span>4 pages</span></div>
+      <h2>Les cristaux</h2><i>sel, diamant, graphite</i>
+      <span class="cnt">Chine : 高二 · 晶体结构</span>
+      <img src="img/cristaux.jpg" alt="La maille du chlorure de sodium">
+    </a>
+    <a class="card" href="cinetique/">
+      <div class="no"><span>N° 07</span><span>4 pages</span></div>
+      <h2>Énergie et vitesse</h2><i>enthalpie, activation, catalyse</i>
+      <span class="cnt">Chine : 高二 · 反应热 · 反应速率</span>
+      <img src="img/cinetique.jpg" alt="Le profil d’énergie d’une réaction">
+    </a>
+    <a class="card" href="equilibre/">
+      <div class="no"><span>N° 08</span><span>3 pages</span></div>
+      <h2>L’équilibre chimique</h2><i>Le Chatelier, synthèse de l’ammoniac</i>
+      <span class="cnt">Chine : 高二 · 化学平衡</span>
+      <img src="img/equilibre.jpg" alt="Un ballon de dioxyde d’azote">
+    </a>
+    <a class="card" href="piles/">
+      <div class="no"><span>N° 09</span><span>4 pages</span></div>
+      <h2>Piles et électrolyse</h2><i>Daniell, potentiels, lithium-ion</i>
+      <span class="cnt">Chine : 高二 · 化学反应与电能</span>
+      <img src="img/piles.jpg" alt="La pile Daniell">
+    </a>
+    <a class="card" href="organique/">
+      <div class="no"><span>N° 10</span><span>4 pages</span></div>
+      <h2>Chimie organique</h2><i>alcanes, isomères, benzène, chiralité</i>
+      <span class="cnt">Chine : 高一 · 高二 · 有机化学基础</span>
+      <img src="img/organique.jpg" alt="Les quatre premiers alcanes">
+    </a>
+  </section>
+  <h2 class="section">Prépa · MPSI–PCSI</h2>
+  <section class="shelf">
+    <a class="card" href="orbitales/">
+      <div class="no"><span>N° 11</span><span>4 pages</span></div>
+      <h2>Les orbitales</h2><i>s, p, d et remplissage</i>
+      <span class="cnt">Chine : 高二 · 大学 · 原子轨道</span>
+      <img src="img/orbitales.jpg" alt="Les orbitales 1s et 2s">
+    </a>
+  </section>
+  <p class="credit">Moteur de rendu repris de <a href="https://github.com/nathanliow/atlas-of-physics">Atlas of Physics</a> (licence MIT). Contenus d’après les programmes français et les manuels chinois 人教版 (PEP).</p>
+</body>
+</html>
